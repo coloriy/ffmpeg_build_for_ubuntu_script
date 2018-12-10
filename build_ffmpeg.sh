@@ -2,15 +2,15 @@
 
 HOME=$(cd `dirname $0`; pwd)
 
-cd ffmpeg && \
-PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" \
+cd ../ffmpeg && \
+PATH="$HOME/../bin:$PATH" PKG_CONFIG_PATH="$HOME/../ffmpeg_build/lib/pkgconfig" \
 ./configure \
---prefix="$HOME/ffmpeg_build" \
+--prefix="$HOME/../ffmpeg_build" \
 --pkg-config-flags="--static" \
---extra-cflags="-I$HOME/ffmpeg_build/include" \
---extra-ldflags="-L$HOME/ffmpeg_build/lib" \
+--extra-cflags="-I$HOME/../ffmpeg_build/include" \
+--extra-ldflags="-L$HOME/../ffmpeg_build/lib" \
 --extra-libs="-lpthread -lm" \
---bindir="$HOME/bin" \
+--bindir="$HOME/../bin" \
 --enable-gpl \
 --enable-libaom \
 --enable-libass \
@@ -23,7 +23,7 @@ PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" \
 --enable-libx264 \
 --enable-libx265 \
 --enable-nonfree && \
-PATH="$HOME/bin:$PATH" \
+PATH="$HOME/../bin:$PATH" \
 make -j16 && \
 make install && \
 hash -r
